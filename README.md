@@ -3,7 +3,7 @@
 
 # 📁 backend/README.md
 
-```markdown
+
 # Backend – DAG Validation Service
 
 ## Overview
