@@ -5,13 +5,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# -----------------------------
-# CORS 설정 (🔥 반드시 필요)
-# -----------------------------
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 개발용 (과제용)
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -89,7 +85,7 @@ def parse_pipeline(pipeline: Pipeline):
     dag_result = is_dag(pipeline.nodes, pipeline.edges)
 
     return {
-        "nodes": node_count,
-        "edges": edge_count,
+        "num_nodes": node_count,
+        "num_edges": edge_count,
         "is_dag": dag_result
     }
